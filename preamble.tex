@@ -1,0 +1,81 @@
+%% --- encoding the docs------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+%--- Math environments-------------------
+\usepackage{amsmath, amssymb}
+
+%%--- Miscellaneous Environments ---------
+\usepackage{xcolor} % for color
+\usepackage{bold-extra} % To use sc as well as bf together
+\usepackage{graphicx} % to insert figure
+\usepackage{longtable} % to use table over the pages 
+
+
+%%----Page Layout ------------
+\usepackage[lmargin=3cm, rmargin=2cm, tmargin=3cm, bmargin=2cm]{geometry}
+
+%%---- Header and Footer-----
+\usepackage{fancyhdr}
+\fancyhf{} 
+\fancyhead[R]{\textnormal{\nouppercase\leftmark}}
+\fancyfoot[C]{\thepage}
+%%---- Line spacing ---------
+\renewcommand{\baselinestretch}{2}
+
+%%---- Font ----------
+\usepackage{times} % Time new roman font
+
+\usepackage{lipsum}
+
+
+\newenvironment{preface}[1]{
+	\newpage \thispagestyle{empty}
+	   \addcontentsline{toc}{section}{#1}
+	\begin{center}\vspace*{1.5cm} {\Large\sf \bfseries #1} \vspace{0.5cm}\end{center}
+}{}
+
+\newenvironment{certificate}{
+	\newpage \thispagestyle{empty}
+	\addcontentsline{toc}{section}{Certificate}
+	\begin{center}
+		\includegraphics[scale=.6]{img/smit-logo}\\[-1.5em]
+		{\color{orange}\bf (Constituent College of Sikkim Manipal University)}\\[1em]
+		{\Large\sf  \sc \textbf{\underline{CERTIFICATE}}}
+	\end{center}
+}{}
+
+%%--- for TOC-------------------------
+\renewcommand{\contentsname}{\centering\Large\sf \bfseries Contents}
+\renewcommand{\listfigurename}{\centering\Large\sf \bfseries LIst of Figures}
+\renewcommand{\listtablename}{\centering\Large\sf \bfseries LIst of Tables}
+
+
+%%% -------- Theorem Environments --------
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}[definition]{Example}
+\newtheorem{problem}[definition]{Problem}
+
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{Remark}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+%%%--- Hyperref----------------------------
+\usepackage{hyperref}
+\hypersetup{
+colorlinks = true,
+linkcolor=black,
+citecolor=blue!50!black
+}
